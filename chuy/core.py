@@ -1,3 +1,4 @@
+from pathlib import Path
 from colores import error_no_traceback, setup_colorama
 
 from .helpers import exec_commands, get_commands, get_config, get_config_file
@@ -10,7 +11,14 @@ def entry_point() -> None:
 
     setup_colorama()
 
-    config = get_config(get_config_file(["chuy.json", "pyproject.toml", "chuy.toml"]))
+    home = str(Path.home())
+    accept_files = ["chuy.json", "pyproject.toml", "chuy.toml"])
+    if home:
+        tmp_dir = []
+        for item in accept_files:
+            accept_files.append(home.joinpath(item))
+
+    config = get_config(get_config_file(accept_files)
 
     for command in get_commands(config):
         try:
