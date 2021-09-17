@@ -61,19 +61,11 @@ def get_commands(config: dict) -> list:
     Get a list with all the commands to execute.
     """
 
-    commands = []
-
-    for item in range(len(config)):
-        try:
-            commands.append(sys.argv[item])
-        except IndexError:
-            break
-
-    if len(commands) == 1:
+    if len(sys.argv) == 1:
         list_commands(config)
         return colorized_input("Which command do you want to run? ").split(" ")
 
-    return commands[1::]
+    return sys.argv[1:]
 
 
 def exec_commands(command: str) -> None:

@@ -12,13 +12,13 @@ def entry_point() -> None:
     setup_colorama()
 
     home = str(Path.home())
-    accept_files = ["chuy.json", "pyproject.toml", "chuy.toml"])
+    accept_files = ["chuy.json", "pyproject.toml", "chuy.toml"]
     if home:
         tmp_dir = []
         for item in accept_files:
-            accept_files.append(home.joinpath(item))
-
-    config = get_config(get_config_file(accept_files)
+            tmp_dir.append(f"{home}/{item}")
+        accept_files += tmp_dir
+    config = get_config(get_config_file(accept_files))
 
     for command in get_commands(config):
         try:
