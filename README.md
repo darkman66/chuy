@@ -29,7 +29,7 @@ pip install chuy
 To get the last version:
 
 ```bash
-pip install git+https:/github.com/UltiRequiem/chuy
+pip install git+https:/github.com/darkman66/chuy.git
 ```
 
 If you use Linux, you may need to install this with sudo to
