@@ -29,7 +29,7 @@ pip install chuy
 To get the last version:
 
 ```bash
-pip install git+https://github.com/darkman66/chuy.git
+pip install "git+https://github.com/darkman66/chuy.git@v1.4.1#egg=chuy"
 ```
 
 If you use Linux, you may need to install this with sudo to
