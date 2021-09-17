@@ -37,6 +37,8 @@ be able to access the command throughout your system.
 
 ## Example Configuration file
 
+Notice: configuration files can be located iun currect working directory (checked 1st) or in your home folder.
+
 Using `JSON` format:
 
 ```json
