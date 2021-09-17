@@ -21,11 +21,11 @@ def get_config_file(posible_config_files: list) -> str:
     raise BaseException("Configuration file not found :(")
 
 
-def get_config(file: str) -> dict:
+def get_config(f: str) -> dict:
     """
     Read the config and parse it to a Python dictionary.
     """
-
+    file = f.split('/')[-1]
     with open(file=file, mode="r", encoding="utf-8") as configuration:
         try:
             return {
